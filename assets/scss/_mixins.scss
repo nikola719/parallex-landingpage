@@ -109,29 +109,23 @@
 }
 
 @mixin menuEffect($color) {
-  &::before,
-  &::after {
+  &::before {
     position: absolute;
     content: "";
     width: 0;
     height: 2px;
+    left: 50%;
     bottom: 0;
+    transform: translateX(-50%);
     background-color: $color;
     transition: all ease-in-out 0.3s;
-  }
-  &::before {
-    left: 50%;
-  }
-  &::after {
-    right: 50%;
   }
 }
 
 @mixin hoverEffect() {
   &:hover {
-    &::before,
-    &::after {
-      width: 50%;
+    &::before {
+      width: 100%;
       transition: all ease-in-out 0.3s;
     }
   }

@@ -192,10 +192,13 @@ p {
       @media only screen and (max-width: 768px) {
         .header.is-scrolling .header-nav__logo span {
           visibility: visible; } }
+    .header.is-scrolling .header-nav__items {
+      margin-right: 0; }
     .header.is-scrolling .header-nav__item:last-child {
       opacity: 1;
       width: 242px;
-      padding-left: 40px; }
+      padding-left: 40px;
+      margin-right: 24px; }
       @media only screen and (max-width: 768px) {
         .header.is-scrolling .header-nav__item:last-child {
           width: 100%;
@@ -261,11 +264,22 @@ p {
       .header-nav__item:last-child {
         opacity: 0;
         width: 0;
-        padding-left: 0; }
+        padding-left: 0;
+        position: relative; }
         @media only screen and (max-width: 768px) {
           .header-nav__item:last-child {
             width: 100%;
             opacity: 1; } }
+        .header-nav__item:last-child .header-nav__link::after {
+          content: "";
+          background: url(../images/Triangle.svg);
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 11px;
+          background-size: contain;
+          margin-left: 12px;
+          position: relative;
+          display: inline-block; }
     .header-nav__link {
       position: relative;
       color: inherit;
@@ -276,35 +290,19 @@ p {
       line-height: 18px;
       letter-spacing: 0.795225px;
       font-weight: 700; }
-      .header-nav__link::before, .header-nav__link::after {
+      .header-nav__link::before {
         position: absolute;
         content: "";
         width: 0;
         height: 2px;
+        left: 50%;
         bottom: 0;
+        transform: translateX(-50%);
         background-color: #353231;
         transition: all ease-in-out 0.3s; }
-      .header-nav__link::before {
-        left: 50%; }
-      .header-nav__link::after {
-        right: 50%; }
-      .header-nav__link:hover::before, .header-nav__link:hover::after {
-        width: 50%;
+      .header-nav__link:hover::before {
+        width: 100%;
         transition: all ease-in-out 0.3s; }
-      .header-nav__link span {
-        margin-right: 24px;
-        position: relative; }
-        .header-nav__link span::before {
-          position: absolute;
-          content: "";
-          background: url(../images/Triangle.svg);
-          background-repeat: no-repeat;
-          width: 16px;
-          height: 11px;
-          top: 50%;
-          right: -24px;
-          transform: translate(0, -50%);
-          background-size: contain; }
   .header.active {
     background-color: #ffffff; }
     .header.active .header-nav__items {

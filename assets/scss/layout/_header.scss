@@ -51,11 +51,15 @@
           }
         }
       }
+      &__items {
+        margin-right: 0;
+      }
       &__item {
         &:last-child {
           opacity: 1;
           width: 242px;
           padding-left: 40px;
+          margin-right: 24px;
           @include mq("tablet") {
             width: 100%;
             padding-left: 0;
@@ -124,7 +128,6 @@
         line-height: 3;
         text-align: center;
         padding: 20px 0;
-        // @extend .transition;
       }
     }
     &__item {
@@ -141,6 +144,18 @@
           width: 100%;
           opacity: 1;
         }
+        position: relative;
+        .header-nav__link::after {
+          content: "";
+          background: url(../images/Triangle.svg);
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 11px;
+          background-size: contain;
+          margin-left: 12px;
+          position: relative;
+          display: inline-block;
+        }
       }
     }
     &__link {
@@ -152,22 +167,6 @@
       @include menuEffect($dark);
       @include hoverEffect();
       font-weight: 700;
-      span {
-        margin-right: 24px;
-        position: relative;
-        &::before {
-          position: absolute;
-          content: "";
-          background: url(../images/Triangle.svg);
-          background-repeat: no-repeat;
-          width: 16px;
-          height: 11px;
-          top: 50%;
-          right: -24px;
-          transform: translate(0, -50%);
-          background-size: contain;
-        }
-      }
     }
   }
   &.active {
