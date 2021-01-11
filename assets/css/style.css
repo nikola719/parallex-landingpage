@@ -292,10 +292,19 @@ p {
         width: 50%;
         transition: all ease-in-out 0.3s; }
       .header-nav__link span {
-        margin-right: 12px; }
-      .header-nav__link img {
-        width: 16px;
-        height: 11px; }
+        margin-right: 24px;
+        position: relative; }
+        .header-nav__link span::before {
+          position: absolute;
+          content: "";
+          background: url(../images/Triangle.svg);
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 11px;
+          top: 50%;
+          right: -24px;
+          transform: translate(0, -50%);
+          background-size: contain; }
   .header.active {
     background-color: #ffffff; }
     .header.active .header-nav__items {

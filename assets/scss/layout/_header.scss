@@ -153,11 +153,20 @@
       @include hoverEffect();
       font-weight: 700;
       span {
-        margin-right: 12px;
-      }
-      img {
-        width: 16px;
-        height: 11px;
+        margin-right: 24px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          background: url(../images/Triangle.svg);
+          background-repeat: no-repeat;
+          width: 16px;
+          height: 11px;
+          top: 50%;
+          right: -24px;
+          transform: translate(0, -50%);
+          background-size: contain;
+        }
       }
     }
   }
