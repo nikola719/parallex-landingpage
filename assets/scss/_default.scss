@@ -2,6 +2,7 @@
 .section {
   position: relative;
   background-color: $white;
+  margin-bottom: -1px;
   &-title {
     position: relative;
     font-family: Butler Stencil;
@@ -163,7 +164,7 @@
     margin-right: auto;
     text-align: center;
     @include mq("desktop-small") {
-      max-width: 70%;
+      max-width: 71%;
     }
   }
   .attraction-parallex {
@@ -194,8 +195,9 @@
       @include mq("desktop-small") {
         width: 18%;
       }
-      @include mq("phone") {
-        top: 0;
+      @include mq("tablet-small") {
+        bottom: 15%;
+        top: auto;
       }
     }
     &.right {

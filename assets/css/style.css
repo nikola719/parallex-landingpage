@@ -142,7 +142,7 @@ p {
     line-height: 29px; }
     @media only screen and (max-width: 425px) {
       p.size-large {
-        font-size: 16px; } }
+        font-size: 14px; } }
 
 @font-face {
   font-family: Butler Stencil;
@@ -249,7 +249,7 @@ p {
           top: 100%;
           right: -100%;
           width: 100%;
-          background-color: #ffffff;
+          background-color: rgba(255, 255, 255, 0);
           line-height: 3;
           text-align: center;
           padding: 20px 0; } }
@@ -299,7 +299,8 @@ p {
   .header.active {
     background-color: #ffffff; }
     .header.active .header-nav__items {
-      right: 0; }
+      right: 0;
+      background-color: white; }
 
 .hamburger {
   padding: 0;
@@ -461,7 +462,8 @@ p {
 
 .section {
   position: relative;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  margin-bottom: -1px; }
   .section-title {
     position: relative;
     font-family: Butler Stencil;
@@ -476,7 +478,7 @@ p {
     color: inherit; }
     @media only screen and (max-width: 425px) {
       .section-desc {
-        font-size: 16px; } }
+        font-size: 14px; } }
   .section .parallex_scroll {
     transition: all cubic-bezier(0.4, 0, 1, 1) 0.1s; }
 
@@ -608,7 +610,7 @@ p {
     text-align: center; }
     @media only screen and (max-width: 1024px) {
       #attraction .section-desc {
-        max-width: 70%; } }
+        max-width: 71%; } }
   #attraction .attraction-parallex {
     position: absolute; }
     #attraction .attraction-parallex::before {
@@ -630,9 +632,10 @@ p {
       @media only screen and (max-width: 1024px) {
         #attraction .attraction-parallex.left {
           width: 18%; } }
-      @media only screen and (max-width: 425px) {
+      @media only screen and (max-width: 640px) {
         #attraction .attraction-parallex.left {
-          top: 0; } }
+          bottom: 15%;
+          top: auto; } }
     #attraction .attraction-parallex.right {
       top: 22%;
       right: 0;
