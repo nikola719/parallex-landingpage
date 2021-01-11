@@ -341,7 +341,8 @@ p {
   padding-bottom: 82px;
   position: relative;
   background: #ffffff;
-  line-height: 0; }
+  line-height: 0;
+  overflow: hidden; }
   @media only screen and (max-width: 1440px) {
     .footer {
       padding-top: 250px; } }
