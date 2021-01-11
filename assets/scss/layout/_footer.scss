@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+  padding-top: 485px;
+  padding-bottom: 82px;
+  position: relative;
+  background: $white;
+  line-height: 0;
+  @include mq("desktop-wide") {
+    padding-top: 250px;
+  }
+  @include mq("desktop-small") {
+    padding-top: 150px;
+  }
+  @include mq("tablet") {
+    padding-top: 100px;
+  }
+  .container {
+    max-width: 770px;
+    padding: 0 15px;
+    margin: auto;
+  }
+  &-main__title {
+    position: relative;
+    font-family: Butler Stencil;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 0.88;
+    text-align: center;
+    letter-spacing: -0.02978px;
+    color: inherit;
+    @include mq("desktop-small") {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq("tablet") {
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq("phone") {
+      line-height: 1.2;
+    }
+  }
+  &-contact {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 68px;
+    @include mq("desktop-small") {
+      flex-direction: column;
+    }
+    &.justify-center {
+      justify-content: center;
+    }
+    &__region {
+      width: 100%;
+      font-family: inherit;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2.25861px;
+      color: inherit;
+    }
+    &__item {
+      text-align: center;
+      margin-bottom: 16px;
+      .size-normal {
+        font-weight: 500;
+        color: inherit;
+        font-family: Poppins;
+      }
+      a {
+        @include bodyText("medium");
+        display: block;
+        font-family: Poppins;
+        color: inherit;
+        font-weight: 500;
+        &:nth-child(2) {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .copy-right {
+    position: relative;
+    margin: 42px 0 0;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.004375px;
+    color: inherit;
+    opacity: 0.65;
+    text-align: center;
+    @include mq("phone") {
+      max-width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &-parallex {
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom;
+    &.left {
+      left: 0;
+      width: 20%;
+      @include mq("tablet") {
+        width: 30%;
+      }
+      @include mq("phone") {
+        width: 20%;
+      }
+      &#ft-lefttree {
+        width: 40%;
+      }
+    }
+    &.right {
+      width: 10%;
+      right: 0;
+      text-align: right;
+      @include mq("tablet") {
+        width: 15%;
+      }
+      @include mq("phone") {
+        width: 10%;
+      }
+      &#ft-righttree {
+        width: 20%;
+      }
+    }
+  }
+}

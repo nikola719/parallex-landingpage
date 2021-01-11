@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    // @if ($type == max) {
+    //   $width: $width - 1px;
+    // }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin heading1() {
+  font-size: 95.296px;
+  margin-bottom: 150px;
+  @include mq("desktop-small") {
+    font-size: 70px;
+  }
+  @include mq("tablet") {
+    font-size: 60px;
+    margin-bottom: 100px;
+  }
+  @include mq("phone-wide") {
+    font-size: 55px;
+  }
+  @include mq("phone") {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+}
+@mixin heading2() {
+  font-size: 83.28px;
+  @include mq("desktop-wide") {
+    font-size: 75px;
+  }
+  @include mq("desktop-small") {
+    font-size: 55px;
+  }
+  @include mq("tablet") {
+    font-size: 45px;
+  }
+  @include mq("phablet") {
+    font-size: 38px;
+  }
+  @include mq("phone-wide") {
+    font-size: 34px;
+  }
+  @include mq("phone") {
+    font-size: 30px;
+  }
+}
+@mixin heading3() {
+  font-size: 71.28px;
+  @include mq("desktop-wide") {
+    font-size: 65px;
+  }
+  @include mq("desktop-small") {
+    font-size: 50px;
+  }
+  @include mq("tablet") {
+    font-size: 45px;
+  }
+  @include mq("phone") {
+    font-size: 40px;
+  }
+}
+@mixin heading4() {
+  font-size: 32.28px;
+}
+@mixin heading5() {
+  font-size: 20.28px;
+  line-height: 24px;
+  margin-bottom: 46px;
+}
+
+@mixin bodyText($size) {
+  font-weight: 400;
+
+  @if $size == small {
+    font-size: 15.28px;
+    line-height: 18px;
+    letter-spacing: 0.795225px;
+  }
+  @if $size == normal {
+    font-size: 20px;
+    line-height: 30px;
+    @include mq("phone") {
+      font-size: 18px;
+    }
+  }
+  @if $size == medium {
+    font-size: 17px;
+    line-height: 25.5px;
+    @include mq("phone") {
+      font-size: 15px;
+    }
+  }
+  @if $size == large {
+    font-size: 20.28px;
+    line-height: 29px;
+    @include mq("phone") {
+      font-size: 16px;
+    }
+  }
+}
+
+@mixin menuEffect($color) {
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    background-color: $color;
+    transition: all ease-in-out 0.3s;
+  }
+  &::before {
+    left: 50%;
+  }
+  &::after {
+    right: 50%;
+  }
+}
+
+@mixin hoverEffect() {
+  &:hover {
+    &::before,
+    &::after {
+      width: 50%;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+}

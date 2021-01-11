@@ -1,0 +1,331 @@
+//page styles
+.section {
+  position: relative;
+  background-color: $white;
+  &-title {
+    position: relative;
+    font-family: Butler Stencil;
+    font-weight: 700;
+  }
+  &-desc {
+    @include bodyText("large");
+    position: relative;
+    font-family: Poppins;
+    font-weight: 400;
+    color: inherit;
+  }
+  .parallex_scroll {
+    transition: all cubic-bezier(0.4, 0, 1, 1) 0.1s;
+  }
+}
+
+//Section Hero
+#hero {
+  min-height: 1000px;
+  height: 100vh;
+  position: relative;
+  line-height: 0;
+  @include mq("phone") {
+    min-height: 750px;
+  }
+  video {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
+  .section-hero__background {
+    min-height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed center;
+  }
+  .section-title {
+    position: absolute;
+    width: 100%;
+    bottom: 245px;
+    font-family: inherit;
+    line-height: 38px;
+    letter-spacing: 14.2835px;
+    text-align: center;
+    color: #0f0f0f;
+    text-transform: uppercase;
+  }
+  .clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &__left {
+      position: absolute;
+      width: 70vw;
+      right: 40%;
+      bottom: 0;
+    }
+    &__right {
+      position: absolute;
+      width: 70vw;
+      left: 40%;
+      bottom: 0;
+    }
+  }
+}
+
+//Section Gallery
+#gallery {
+  padding: 210px 0 30px;
+  @include mq("tablet") {
+    padding-top: 110px;
+  }
+  @include mq("tablet-small") {
+    padding-top: 60px;
+  }
+  .container {
+    max-width: 1365px;
+    padding: 0 15px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    @include mq("desktop-wide") {
+      max-width: 1200px;
+    }
+    @include mq("tablet-small") {
+      flex-direction: column;
+    }
+  }
+  .gallery-left {
+    width: calc(50% - 38.5px);
+    padding-bottom: 127px;
+    @include mq("desktop-small") {
+      width: calc(50% - 19px);
+    }
+    @include mq("tablet-small") {
+      width: 100%;
+      padding-bottom: 0;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include mq("tablet-small") {
+        height: 115vw;
+      }
+    }
+  }
+  .gallery-right {
+    width: calc(50% - 38.5px);
+    padding-top: 127px;
+    @include mq("desktop-small") {
+      width: calc(50% - 19px);
+    }
+    @include mq("tablet-small") {
+      width: 100%;
+      padding-top: 60px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+//Section Attraction
+#attraction {
+  padding: 22vw 0 26vw;
+  position: relative;
+  .section-title {
+    text-align: center;
+    letter-spacing: -0.03px;
+    margin-bottom: 133px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("desktop-wide") {
+      max-width: 800px;
+    }
+    @include mq("desktop-small") {
+      max-width: 560px;
+    }
+    @include mq("tablet") {
+      max-width: 60%;
+      margin-bottom: 100px;
+    }
+    @include mq("phone") {
+      max-width: 70%;
+      margin-bottom: 50px;
+    }
+  }
+  .section-desc {
+    max-width: 593px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    @include mq("desktop-small") {
+      max-width: 70%;
+    }
+  }
+  .attraction-parallex {
+    position: absolute;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(1%, #fff),
+        to(hsla(0, 0%, 100%, 0))
+      );
+      background-image: linear-gradient(0deg, #fff 1%, hsla(0, 0%, 100%, 0));
+      content: "";
+    }
+    &.left {
+      top: -1%;
+      left: 0;
+      width: 20%;
+      @include mq("desktop-wide") {
+        top: 5%;
+      }
+      @include mq("desktop-small") {
+        width: 18%;
+      }
+      @include mq("phone") {
+        top: 0;
+      }
+    }
+    &.right {
+      &::before {
+        background-image: linear-gradient(0deg, #fff 20%, hsla(0, 0%, 100%, 0));
+      }
+      top: 22%;
+      right: 0;
+      width: 23%;
+      @include mq("desktop-wide") {
+        right: -3%;
+        top: 18%;
+        width: 20%;
+      }
+      @include mq("desktop-small") {
+        top: 15%;
+        width: 23%;
+      }
+      @include mq("phone") {
+        top: 9%;
+        width: 25%;
+        right: -8%;
+      }
+    }
+    .sub-parallex {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+//Section Location
+#location {
+  padding: 107px 0 79px;
+  @include mq("desktop-wide") {
+    padding-top: 60px;
+  }
+  @include mq("desktop-small") {
+    padding-top: 0;
+    margin-top: -50px;
+  }
+  @include mq("desktop-small") {
+    margin-top: -80px;
+  }
+  @include mq("phone") {
+    margin-top: 0;
+  }
+  .container {
+    max-width: 1545px;
+    padding: 0 15px;
+    margin: auto;
+    @include mq("desktop-wide") {
+      max-width: 1200px;
+    }
+  }
+  .section-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 96px;
+    @include mq("desktop-small") {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+    &-left {
+      width: calc(62% - 16px);
+      @include mq("desktop-small") {
+        width: 100%;
+      }
+      .section-title {
+        line-height: 1.05;
+        letter-spacing: -0.022275px;
+        color: inherit;
+        @include mq("desktop-wide") {
+          max-width: 800px;
+        }
+        @include mq("desktop-small") {
+          max-width: 600px;
+          margin-bottom: 70px;
+        }
+        @include mq("tablet") {
+          max-width: 550px;
+        }
+        @include mq("tablet-small") {
+          text-align: center;
+          margin-right: auto;
+          margin-left: auto;
+        }
+      }
+    }
+    &-right {
+      width: calc(38% - 16px);
+      @include mq("desktop-small") {
+        width: 100%;
+      }
+      .section-desc {
+        letter-spacing: -0.0063375px;
+        @include mq("desktop-small") {
+          max-width: 550px;
+          margin-left: auto;
+          text-align: right;
+          margin-bottom: 50px;
+        }
+        @include mq("tablet-small") {
+          text-align: center;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+  .section-image-wrapper {
+    .map-back-left {
+      position: absolute;
+      left: 3%;
+      bottom: 1.5%;
+      width: 18%;
+      @include mq("phone") {
+        bottom: 10%;
+      }
+    }
+    .map-back-right {
+      position: absolute;
+      right: 0;
+      bottom: 28%;
+      width: 15%;
+      @include mq("phone") {
+        bottom: 23%;
+      }
+    }
+  }
+}
